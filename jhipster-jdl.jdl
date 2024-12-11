@@ -1,0 +1,29 @@
+entity Jefe {
+    nombreJefe String required,
+    telefonoJefe String required
+}
+
+entity Departamento {
+    nombreDepartamento String required unique,
+    ubicacionDepartamento String,
+    presupuestoDepartamento Integer
+}
+
+entity Empleado {
+    nombreEmpleado String required,
+    apellidoEmpleado String required,
+    telefonoEmpleado String,
+    correoEmpleado String
+}
+
+// Relaciones
+relationship ManyToMany {
+    Jefe{departamentos} to Departamento{jefes} // Relación muchos a muchos entre Jefe y Departamento
+}
+
+relationship OneToMany {
+    Departamento{empleados} to Empleado{idDepartamento} // Un departamento tiene muchos empleados, pero cada empleado pertenece a un solo departamento
+}
+
+// Opciones adicionales
+paginate Empleado, Departamento with pagination
