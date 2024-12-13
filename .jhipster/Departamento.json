@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20241211055229"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nombreDepartamento",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "ubicacionDepartamento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "presupuestoDepartamento",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Departamento",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "empleado",
+      "otherEntityRelationshipName": "idDepartamento",
+      "relationshipName": "empleados",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "jefe",
+      "otherEntityRelationshipName": "departamentos",
+      "relationshipName": "jefes",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20241211055231"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nombreJefe",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "telefonoJefe",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Jefe",
+  "relationships": [
+    {
+      "otherEntityName": "departamento",
+      "otherEntityRelationshipName": "jefes",
+      "relationshipName": "departamentos",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

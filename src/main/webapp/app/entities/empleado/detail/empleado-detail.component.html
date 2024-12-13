@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (empleado(); as empleadoRef) {
+      <div>
+        <h2 data-cy="empleadoDetailsHeading"><span jhiTranslate="sumativa2DunfinApp.empleado.detail.title">Empleado</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ empleadoRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="sumativa2DunfinApp.empleado.nombreEmpleado">Nombre Empleado</span></dt>
+          <dd>
+            <span>{{ empleadoRef.nombreEmpleado }}</span>
+          </dd>
+          <dt><span jhiTranslate="sumativa2DunfinApp.empleado.apellidoEmpleado">Apellido Empleado</span></dt>
+          <dd>
+            <span>{{ empleadoRef.apellidoEmpleado }}</span>
+          </dd>
+          <dt><span jhiTranslate="sumativa2DunfinApp.empleado.telefonoEmpleado">Telefono Empleado</span></dt>
+          <dd>
+            <span>{{ empleadoRef.telefonoEmpleado }}</span>
+          </dd>
+          <dt><span jhiTranslate="sumativa2DunfinApp.empleado.correoEmpleado">Correo Empleado</span></dt>
+          <dd>
+            <span>{{ empleadoRef.correoEmpleado }}</span>
+          </dd>
+          <dt><span jhiTranslate="sumativa2DunfinApp.empleado.idDepartamento">Id Departamento</span></dt>
+          <dd>
+            @if (empleado()!.idDepartamento) {
+              <div>
+                <a [routerLink]="['/departamento', empleado()!.idDepartamento?.id, 'view']">{{ empleadoRef.idDepartamento?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+        </button>
+
+        <button type="button" [routerLink]="['/empleado', empleadoRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

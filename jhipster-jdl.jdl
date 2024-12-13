@@ -17,7 +17,7 @@ entity Empleado {
 }
 
 // Relaciones
-relationship ManyToMany {
+relationship ManyToOne {
     Jefe{departamentos} to Departamento{jefes} // Relación muchos a muchos entre Jefe y Departamento
 }
 
