@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+
 # sumativa2Dunfin
 
 This application was generated using JHipster 8.7.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.7.3](https://www.jhipster.tech/documentation-archive/v8.7.3).
@@ -262,4 +264,9 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [Jest]: https://facebook.github.io/jest/
 [Leaflet]: https://leafletjs.com/
 [DefinitelyTyped]: https://definitelytyped.org/
-[Angular CLI]: https://cli.angular.io/
+
+# [Angular CLI]: https://cli.angular.io/
+
+# Sumativa_2
+
+> > > > > > > bbc3e3adaa7e3ea3ed50aac2cdebba2746afab38
